@@ -78,3 +78,62 @@ See
 ## License
 
 MIT
+
+
+
+# RTF
+
+```bash
+# Установка зависимостей для всех пакетов
+$ yarn
+```
+
+```bash
+# Паралельный запуск всех пакетов
+$ yarn start
+```
+
+```bash
+# Запуск одного пакета
+$ yarn start --parallel --scope @hr-platform/rtf
+```
+ 
+```bash
+# Запуск нескольких пакетов 
+$ yarn start --scope @hr-monorepo/shared --scope @hr-platform/rtf-main
+```
+
+```bash
+# Установить module-1 в package-2 в dependencies
+$ yarn lerna add module-1 --scope=package-2
+```
+
+```bash
+# Установить module-1 в package-2 в dependencies в devDependencies
+$ yarn lerna add module-1 --scope=package-2 --dev
+```
+
+
+## Deployment
+
+```bash
+# Build для всех пакетов
+$ yarn build
+```
+
+```bash
+# Build для отдельных пакетов
+$ yarn build --scope @hr-platform/rtf-main
+```
+
+## Внимание
+В каждом отдельном пакете должен находиться .env файл, внутри которого необходимо указать: SKIP_PREFLIGHT_CHECK=true
+
+
+Другие команды:
+- `yarn test` Запуск тестов.
+- `yarn lint` Запуск eslint.
+- `yarn format` Запуск prettier.
+- `yarn analyze` анализ размера чанков в билде.
+- `yarn reset` удаление папок node_modules внутри каждого пакета.
+
